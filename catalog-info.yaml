@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pz8plbe75-python-gitops
+  description: This is GitOps manifest for pz8plbe75-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pz8plbe75-python
+    backstage.io/kubernetes-id: pz8plbe75-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pz8plbe75-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pz8plbe75-python
